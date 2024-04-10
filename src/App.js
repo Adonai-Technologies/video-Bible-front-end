@@ -19,31 +19,34 @@ import Categories from "./Screens/Dashboard/Admin/Categories";
 import Users from "./Screens/Dashboard/Admin/Users";
 import AddVideo from "./Screens/Dashboard/Admin/AddVideo";
 import ScrollOnTop from "./ScrollOnTop";
+import DrawerContext from "./Context/DrawerContext";
 
 const App = () => {
 	Aos.init();
 	return (
-		<ScrollOnTop>
-			<Routes>
-				<Route path='/' element={<HomeScreen />} />
-				<Route path='/about-us' element={<AboutUs />} />
-				<Route path='/contact-us' element={<ContactUs />} />
-				<Route path='/videos' element={<VideosPage />} />
-				<Route path='/video/:id' element={<SingleMovie />} />
-				<Route path='/watch/:id' element={<WatchPage />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/register' element={<Register />} />
-				<Route path='/profile' element={<Profile />} />
-				<Route path='/password' element={<Password />} />
-				<Route path='/favorite' element={<FavoriteVideo />} />
-				<Route path='/videoslist' element={<VideosList />} />
-				<Route path='/dashboard' element={<Dashboard />} />
-				<Route path='/categories' element={<Categories />} />
-				<Route path='/users' element={<Users />} />
-				<Route path='/addVideo' element={<AddVideo />} />
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-		</ScrollOnTop>
+		<DrawerContext>
+			<ScrollOnTop>
+				<Routes>
+					<Route path='/' element={<HomeScreen />} />
+					<Route path='/about-us' element={<AboutUs />} />
+					<Route path='/contact-us' element={<ContactUs />} />
+					<Route path='/videos' element={<VideosPage />} />
+					<Route path='/video/:id' element={<SingleMovie />} />
+					<Route path='/watch/:id' element={<WatchPage />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/register' element={<Register />} />
+					<Route path='/profile' element={<Profile />} />
+					<Route path='/password' element={<Password />} />
+					<Route path='/favorite' element={<FavoriteVideo />} />
+					<Route path='/videoslist' element={<VideosList />} />
+					<Route path='/dashboard' element={<Dashboard />} />
+					<Route path='/categories' element={<Categories />} />
+					<Route path='/users' element={<Users />} />
+					<Route path='/addVideo' element={<AddVideo />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</ScrollOnTop>
+		</DrawerContext>
 	);
 };
 

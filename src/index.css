@@ -6,51 +6,75 @@
 
 body,
 html {
-  font-size: 'Poppins', sans-serif;
-  font-weight: 400;
+    font-size: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 0 !important;
-  box-shadow: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 /* tailwind Basic class */
 
-.linear-bg{
+.linear-bg {
     background: linear-gradient(269.82deg, #07091c00 0.17%, #080a1ad6 99.87%);
 }
 
-.hoveres{
+.hoveres {
     @apply hidden;
 }
 
 
-.hovered:hover 
-.hoveres{
+.hovered:hover .hoveres {
     @apply flex-colo
 }
 
 
 
-.flex-colo{
+.flex-colo {
     @apply flex flex-col justify-center items-center;
 }
 
-.flex-rows{
+.flex-rows {
     @apply flex flex-row justify-center items-center;
 }
-.flex-btn{
+
+.flex-btn {
     @apply flex justify-between items-center;
 }
 
 
-.transitions{
+.transitions {
     @apply transition duration-300 ease-in;
 }
 
-.zIndex{
+.zIndex {
     z-index: 1000;
+}
+
+
+/* Drawer */
+
+.drawer {
+    overflow: visible;
+}
+
+.drawer .drawer-content-wrapper {
+    width: 100;
+}
+
+.drawer {
+    position: fixed;
+    z-index: 9999;
+    transition: width 0s ease 0.3s, height 0s ease 0.3s,
+        transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+
+.drawer>\* {
+    transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    opacity: 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    box-shadow: 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
 }
